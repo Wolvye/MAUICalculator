@@ -13,6 +13,8 @@ namespace MAUICalculator
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("DancingScript-Bold.ttf", "DancingBold");
+                    fonts.AddFont("DancingScript-Regular.ttf", "DancingRegular");
                 });
 
 #if DEBUG
