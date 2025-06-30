@@ -44,9 +44,16 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkText}, Light={StaticResource LightText}}"/>
     </Style>
 
-    <Style BasedOn="{StaticResource BaseButton}" TargetType="Button">
-        
+    <Style BasedOn="{StaticResource BaseButton}" TargetType="Button"/>
+    <Style x:Key="YellowButton" BasedOn="{StaticResource BaseButton}" TargetType="Button">
+        <Setter Property="TextColor" Value="{StaticResource YellowColor}" />
     </Style>
+
+    <Style x:Key="RedButton" BasedOn="{StaticResource BaseButton}" TargetType="Button">
+        <Setter Property="TextColor" Value="{StaticResource Redcolor}" />
+    </Style>
+
+
     <!--#endregion-->
 
 </ResourceDictionary>
