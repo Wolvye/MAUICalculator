@@ -33,10 +33,20 @@
     <Style TargetType="BoxView">
         <Setter Property="Color" Value="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource LightPrimary}}" />
         <Setter Property="CornerRadius" Value="30,30,0,0" />
-
     </Style>
-    
-    
+    <!--#endregion-->
+
+    <!--#region Buttons -->
+    <Style x:Key="BaseButton" TargetType="Button">
+        <Setter Property="Background" Value="{AppThemeBinding Dark={StaticResource DarkSecondary}, Light={StaticResource LightSecondary}}" />
+        <Setter Property="FontFamily" Value="DancingRegular" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkText}, Light={StaticResource LightText}}"/>
+    </Style>
+
+    <Style BasedOn="{StaticResource BaseButton}" TargetType="Button">
+        
+    </Style>
     <!--#endregion-->
 
 </ResourceDictionary>
