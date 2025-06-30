@@ -7,9 +7,9 @@
     <Grid RowDefinitions=".4*,.6*">
 
         <VerticalStackLayout>
-            <Label Text="5*5"
+            <Label Text="{Binding Formula}"
                    StyleClass="LabelText,Labeloperations"/>
-            <Label Text="25" 
+            <Label Text="{Binding Result}" 
                    StyleClass="LabelText,LabelResult"/>
         </VerticalStackLayout>
 
@@ -17,22 +17,27 @@
             <BoxView/>
             <Grid ColumnDefinitions="*,*,*,*"
                   ColumnSpacing="15"
-                  RowDefinitions="*,*,*,*"
+                  RowDefinitions="*,*,*,*,*"
                   RowSpacing="15"
                   Padding="15">
                 
                 <!--#region Row1 -->
                 <Button Text="AC"
-                        Style="{StaticResource YellowButton}"/>
+                        Style="{StaticResource YellowButton}"
+                        Command="{Binding ResetCommand}"/>
                 <Button Text="⌫"
                         Grid.Column="1"
-                        Style="{StaticResource YellowButton}"/>
+                        Style="{StaticResource YellowButton}"
+                        Command="{Binding BackSpaceCommand}"/>
                 <Button Text="%"
                         Grid.Column="2"
-                        Style="{StaticResource YellowButton}"/>
+                        Style="{StaticResource YellowButton}"
+                        Command="{Binding OperationCommand}" CommandParameter=" % "/>
+                
                 <Button Text="/"
                         Grid.Column="3"
-                        Style="{StaticResource RedButton}"/>
+                        Style="{StaticResource RedButton}"
+                        Command="{Binding OperationCommand}" CommandParameter=" / "/>
                 <!--#endregion-->
                 
                 <!--#region Row2 -->
@@ -50,7 +55,8 @@
                 <Button Text="*"
                     Grid.Column="3"
                         Grid.Row="1"
-                        Style="{StaticResource RedButton}"/>
+                        Style="{StaticResource RedButton}"
+                        Command="{Binding OperationCommand}" CommandParameter=" * "/>
                 <!--#endregion-->
                 
                 <!--#region Row3 -->
@@ -68,7 +74,8 @@
                 <Button Text="-"
                     Grid.Column="3"
                     Grid.Row="2"
-                    Style="{StaticResource RedButton}"/>
+                    Style="{StaticResource RedButton}"
+                    Command="{Binding OperationCommand}" CommandParameter=" - "/>
                 <!--#endregion-->
                 
                 <!--#region Row4 -->
@@ -86,7 +93,8 @@
                 <Button Text="+"
                     Grid.Column="3"
                     Grid.Row="3"
-                    Style="{StaticResource RedButton}"/>
+                    Style="{StaticResource RedButton}"
+                    Command="{Binding OperationCommand}" CommandParameter=" + "/>
                 <!--#endregion-->
 
                 <!--#region Row5 -->
@@ -96,11 +104,13 @@
                     Command="{Binding OperationCommand}" CommandParameter="0"/>
                 <Button Text="."
                     Grid.Column="2"
-                    Grid.Row="4"/>
+                    Grid.Row="4"
+                    Command="{Binding OperationCommand}" CommandParameter="."/>
                 <Button Text="="
                     Grid.Column="3"
                     Grid.Row="4"
-                    Style="{StaticResource RedButton}"/>
+                    Style="{StaticResource RedButton}"
+                    Command="{Binding CalculateCommand}"/>
                 <!--#endregion-->
             </Grid>
         </Grid>
